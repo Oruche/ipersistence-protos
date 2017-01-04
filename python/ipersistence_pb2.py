@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ipersistence.proto',
   package='ipersistence',
   syntax='proto3',
-  serialized_pb=_b('\n\x12ipersistence.proto\x12\x0cipersistence\"=\n\x10\x46\x65tchSaveRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"/\n\x0e\x46\x65tchSaveReply\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"B\n\x11UpdateTagsRequest\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"\x11\n\x0f\x42\x61seResultReply2\xa4\x01\n\x05Saver\x12K\n\tFetchSave\x12\x1e.ipersistence.FetchSaveRequest\x1a\x1c.ipersistence.FetchSaveReply\"\x00\x12N\n\nUpdateTags\x12\x1f.ipersistence.UpdateTagsRequest\x1a\x1d.ipersistence.BaseResultReply\"\x00\x42\x34\n\x1dio.grpc.examples.ipersistenceB\x11IPersistenceProtoP\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x12ipersistence.proto\x12\x0cipersistence\"=\n\x10\x46\x65tchSaveRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"/\n\x0e\x46\x65tchSaveReply\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"B\n\x11UpdateTagsRequest\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"\x11\n\x0f\x42\x61seResultReply\"\"\n\x12SearchByTagRequest\x12\x0c\n\x04tags\x18\x01 \x03(\t\"\x8e\x01\n\x10SearchByTagReply\x12\x34\n\x06images\x18\x01 \x03(\x0b\x32$.ipersistence.SearchByTagReply.Image\x1a\x44\n\x05Image\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t2\xf7\x01\n\x05Saver\x12K\n\tFetchSave\x12\x1e.ipersistence.FetchSaveRequest\x1a\x1c.ipersistence.FetchSaveReply\"\x00\x12N\n\nUpdateTags\x12\x1f.ipersistence.UpdateTagsRequest\x1a\x1d.ipersistence.BaseResultReply\"\x00\x12Q\n\x0bSearchByTag\x12 .ipersistence.SearchByTagRequest\x1a\x1e.ipersistence.SearchByTagReply\"\x00\x42\x34\n\x1dio.grpc.examples.ipersistenceB\x11IPersistenceProtoP\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -177,10 +177,127 @@ _BASERESULTREPLY = _descriptor.Descriptor(
   serialized_end=233,
 )
 
+
+_SEARCHBYTAGREQUEST = _descriptor.Descriptor(
+  name='SearchByTagRequest',
+  full_name='ipersistence.SearchByTagRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='ipersistence.SearchByTagRequest.tags', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=235,
+  serialized_end=269,
+)
+
+
+_SEARCHBYTAGREPLY_IMAGE = _descriptor.Descriptor(
+  name='Image',
+  full_name='ipersistence.SearchByTagReply.Image',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='imageID', full_name='ipersistence.SearchByTagReply.Image.imageID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userID', full_name='ipersistence.SearchByTagReply.Image.userID', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='path', full_name='ipersistence.SearchByTagReply.Image.path', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='ipersistence.SearchByTagReply.Image.tags', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=346,
+  serialized_end=414,
+)
+
+_SEARCHBYTAGREPLY = _descriptor.Descriptor(
+  name='SearchByTagReply',
+  full_name='ipersistence.SearchByTagReply',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='images', full_name='ipersistence.SearchByTagReply.images', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[_SEARCHBYTAGREPLY_IMAGE, ],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=272,
+  serialized_end=414,
+)
+
+_SEARCHBYTAGREPLY_IMAGE.containing_type = _SEARCHBYTAGREPLY
+_SEARCHBYTAGREPLY.fields_by_name['images'].message_type = _SEARCHBYTAGREPLY_IMAGE
 DESCRIPTOR.message_types_by_name['FetchSaveRequest'] = _FETCHSAVEREQUEST
 DESCRIPTOR.message_types_by_name['FetchSaveReply'] = _FETCHSAVEREPLY
 DESCRIPTOR.message_types_by_name['UpdateTagsRequest'] = _UPDATETAGSREQUEST
 DESCRIPTOR.message_types_by_name['BaseResultReply'] = _BASERESULTREPLY
+DESCRIPTOR.message_types_by_name['SearchByTagRequest'] = _SEARCHBYTAGREQUEST
+DESCRIPTOR.message_types_by_name['SearchByTagReply'] = _SEARCHBYTAGREPLY
 
 FetchSaveRequest = _reflection.GeneratedProtocolMessageType('FetchSaveRequest', (_message.Message,), dict(
   DESCRIPTOR = _FETCHSAVEREQUEST,
@@ -209,6 +326,28 @@ BaseResultReply = _reflection.GeneratedProtocolMessageType('BaseResultReply', (_
   # @@protoc_insertion_point(class_scope:ipersistence.BaseResultReply)
   ))
 _sym_db.RegisterMessage(BaseResultReply)
+
+SearchByTagRequest = _reflection.GeneratedProtocolMessageType('SearchByTagRequest', (_message.Message,), dict(
+  DESCRIPTOR = _SEARCHBYTAGREQUEST,
+  __module__ = 'ipersistence_pb2'
+  # @@protoc_insertion_point(class_scope:ipersistence.SearchByTagRequest)
+  ))
+_sym_db.RegisterMessage(SearchByTagRequest)
+
+SearchByTagReply = _reflection.GeneratedProtocolMessageType('SearchByTagReply', (_message.Message,), dict(
+
+  Image = _reflection.GeneratedProtocolMessageType('Image', (_message.Message,), dict(
+    DESCRIPTOR = _SEARCHBYTAGREPLY_IMAGE,
+    __module__ = 'ipersistence_pb2'
+    # @@protoc_insertion_point(class_scope:ipersistence.SearchByTagReply.Image)
+    ))
+  ,
+  DESCRIPTOR = _SEARCHBYTAGREPLY,
+  __module__ = 'ipersistence_pb2'
+  # @@protoc_insertion_point(class_scope:ipersistence.SearchByTagReply)
+  ))
+_sym_db.RegisterMessage(SearchByTagReply)
+_sym_db.RegisterMessage(SearchByTagReply.Image)
 
 
 DESCRIPTOR.has_options = True
@@ -243,6 +382,11 @@ try:
           request_serializer=UpdateTagsRequest.SerializeToString,
           response_deserializer=BaseResultReply.FromString,
           )
+      self.SearchByTag = channel.unary_unary(
+          '/ipersistence.Saver/SearchByTag',
+          request_serializer=SearchByTagRequest.SerializeToString,
+          response_deserializer=SearchByTagReply.FromString,
+          )
 
 
   class SaverServicer(object):
@@ -259,6 +403,11 @@ try:
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
+    def SearchByTag(self, request, context):
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
 
   def add_SaverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -271,6 +420,11 @@ try:
             servicer.UpdateTags,
             request_deserializer=UpdateTagsRequest.FromString,
             response_serializer=BaseResultReply.SerializeToString,
+        ),
+        'SearchByTag': grpc.unary_unary_rpc_method_handler(
+            servicer.SearchByTag,
+            request_deserializer=SearchByTagRequest.FromString,
+            response_serializer=SearchByTagReply.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -290,6 +444,8 @@ try:
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
     def UpdateTags(self, request, context):
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def SearchByTag(self, request, context):
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
 
   class BetaSaverStub(object):
@@ -306,6 +462,9 @@ try:
     def UpdateTags(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
       raise NotImplementedError()
     UpdateTags.future = None
+    def SearchByTag(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      raise NotImplementedError()
+    SearchByTag.future = None
 
 
   def beta_create_Saver_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -316,14 +475,17 @@ try:
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveRequest.FromString,
+      ('ipersistence.Saver', 'SearchByTag'): SearchByTagRequest.FromString,
       ('ipersistence.Saver', 'UpdateTags'): UpdateTagsRequest.FromString,
     }
     response_serializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveReply.SerializeToString,
+      ('ipersistence.Saver', 'SearchByTag'): SearchByTagReply.SerializeToString,
       ('ipersistence.Saver', 'UpdateTags'): BaseResultReply.SerializeToString,
     }
     method_implementations = {
       ('ipersistence.Saver', 'FetchSave'): face_utilities.unary_unary_inline(servicer.FetchSave),
+      ('ipersistence.Saver', 'SearchByTag'): face_utilities.unary_unary_inline(servicer.SearchByTag),
       ('ipersistence.Saver', 'UpdateTags'): face_utilities.unary_unary_inline(servicer.UpdateTags),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
@@ -338,14 +500,17 @@ try:
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveRequest.SerializeToString,
+      ('ipersistence.Saver', 'SearchByTag'): SearchByTagRequest.SerializeToString,
       ('ipersistence.Saver', 'UpdateTags'): UpdateTagsRequest.SerializeToString,
     }
     response_deserializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveReply.FromString,
+      ('ipersistence.Saver', 'SearchByTag'): SearchByTagReply.FromString,
       ('ipersistence.Saver', 'UpdateTags'): BaseResultReply.FromString,
     }
     cardinalities = {
       'FetchSave': cardinality.Cardinality.UNARY_UNARY,
+      'SearchByTag': cardinality.Cardinality.UNARY_UNARY,
       'UpdateTags': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)

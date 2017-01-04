@@ -13,6 +13,7 @@ package ipersistence;
 service Saver {
     rpc FetchSave (FetchSaveRequest) returns (FetchSaveReply) {}
     rpc UpdateTags (UpdateTagsRequest) returns (BaseResultReply) {}
+    rpc SearchByTag (SearchByTagRequest) returns (SearchByTagReply) {}
 }
 
 // The request message containing the user's name.
@@ -36,3 +37,18 @@ message UpdateTagsRequest {
 
 message BaseResultReply {
 }
+
+message SearchByTagRequest {
+    repeated string tags = 1;
+}
+
+message SearchByTagReply {
+    message Image {
+        string imageID = 1;
+        string userID = 2;
+        string path = 3;
+        repeated string tags = 4;
+    }
+    repeated Image images = 1;
+}
+
