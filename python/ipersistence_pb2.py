@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ipersistence.proto',
   package='ipersistence',
   syntax='proto3',
-  serialized_pb=_b('\n\x12ipersistence.proto\x12\x0cipersistence\"=\n\x10\x46\x65tchSaveRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"Q\n\x0e\x46\x65tchSaveReply\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07imageID\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t2T\n\x05Saver\x12K\n\tFetchSave\x12\x1e.ipersistence.FetchSaveRequest\x1a\x1c.ipersistence.FetchSaveReply\"\x00\x42\x34\n\x1dio.grpc.examples.ipersistenceB\x11IPersistenceProtoP\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x12ipersistence.proto\x12\x0cipersistence\"=\n\x10\x46\x65tchSaveRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"Q\n\x0e\x46\x65tchSaveReply\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07imageID\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\"B\n\x11UpdateTagsRequest\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"D\n\x0f\x42\x61seResultReply\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07imageID\x18\x03 \x01(\t2\xa4\x01\n\x05Saver\x12K\n\tFetchSave\x12\x1e.ipersistence.FetchSaveRequest\x1a\x1c.ipersistence.FetchSaveReply\"\x00\x12N\n\nUpdateTags\x12\x1f.ipersistence.UpdateTagsRequest\x1a\x1d.ipersistence.BaseResultReply\"\x00\x42\x34\n\x1dio.grpc.examples.ipersistenceB\x11IPersistenceProtoP\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -122,8 +122,100 @@ _FETCHSAVEREPLY = _descriptor.Descriptor(
   serialized_end=180,
 )
 
+
+_UPDATETAGSREQUEST = _descriptor.Descriptor(
+  name='UpdateTagsRequest',
+  full_name='ipersistence.UpdateTagsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='imageID', full_name='ipersistence.UpdateTagsRequest.imageID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='userID', full_name='ipersistence.UpdateTagsRequest.userID', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='ipersistence.UpdateTagsRequest.tags', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=182,
+  serialized_end=248,
+)
+
+
+_BASERESULTREPLY = _descriptor.Descriptor(
+  name='BaseResultReply',
+  full_name='ipersistence.BaseResultReply',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='success', full_name='ipersistence.BaseResultReply.success', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='ipersistence.BaseResultReply.message', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='imageID', full_name='ipersistence.BaseResultReply.imageID', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=250,
+  serialized_end=318,
+)
+
 DESCRIPTOR.message_types_by_name['FetchSaveRequest'] = _FETCHSAVEREQUEST
 DESCRIPTOR.message_types_by_name['FetchSaveReply'] = _FETCHSAVEREPLY
+DESCRIPTOR.message_types_by_name['UpdateTagsRequest'] = _UPDATETAGSREQUEST
+DESCRIPTOR.message_types_by_name['BaseResultReply'] = _BASERESULTREPLY
 
 FetchSaveRequest = _reflection.GeneratedProtocolMessageType('FetchSaveRequest', (_message.Message,), dict(
   DESCRIPTOR = _FETCHSAVEREQUEST,
@@ -138,6 +230,20 @@ FetchSaveReply = _reflection.GeneratedProtocolMessageType('FetchSaveReply', (_me
   # @@protoc_insertion_point(class_scope:ipersistence.FetchSaveReply)
   ))
 _sym_db.RegisterMessage(FetchSaveReply)
+
+UpdateTagsRequest = _reflection.GeneratedProtocolMessageType('UpdateTagsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATETAGSREQUEST,
+  __module__ = 'ipersistence_pb2'
+  # @@protoc_insertion_point(class_scope:ipersistence.UpdateTagsRequest)
+  ))
+_sym_db.RegisterMessage(UpdateTagsRequest)
+
+BaseResultReply = _reflection.GeneratedProtocolMessageType('BaseResultReply', (_message.Message,), dict(
+  DESCRIPTOR = _BASERESULTREPLY,
+  __module__ = 'ipersistence_pb2'
+  # @@protoc_insertion_point(class_scope:ipersistence.BaseResultReply)
+  ))
+_sym_db.RegisterMessage(BaseResultReply)
 
 
 DESCRIPTOR.has_options = True
@@ -167,6 +273,11 @@ try:
           request_serializer=FetchSaveRequest.SerializeToString,
           response_deserializer=FetchSaveReply.FromString,
           )
+      self.UpdateTags = channel.unary_unary(
+          '/ipersistence.Saver/UpdateTags',
+          request_serializer=UpdateTagsRequest.SerializeToString,
+          response_deserializer=BaseResultReply.FromString,
+          )
 
 
   class SaverServicer(object):
@@ -178,6 +289,11 @@ try:
       context.set_details('Method not implemented!')
       raise NotImplementedError('Method not implemented!')
 
+    def UpdateTags(self, request, context):
+      context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+      context.set_details('Method not implemented!')
+      raise NotImplementedError('Method not implemented!')
+
 
   def add_SaverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -185,6 +301,11 @@ try:
             servicer.FetchSave,
             request_deserializer=FetchSaveRequest.FromString,
             response_serializer=FetchSaveReply.SerializeToString,
+        ),
+        'UpdateTags': grpc.unary_unary_rpc_method_handler(
+            servicer.UpdateTags,
+            request_deserializer=UpdateTagsRequest.FromString,
+            response_serializer=BaseResultReply.SerializeToString,
         ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -202,6 +323,8 @@ try:
     """
     def FetchSave(self, request, context):
       context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
+    def UpdateTags(self, request, context):
+      context.code(beta_interfaces.StatusCode.UNIMPLEMENTED)
 
 
   class BetaSaverStub(object):
@@ -215,6 +338,9 @@ try:
     def FetchSave(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
       raise NotImplementedError()
     FetchSave.future = None
+    def UpdateTags(self, request, timeout, metadata=None, with_call=False, protocol_options=None):
+      raise NotImplementedError()
+    UpdateTags.future = None
 
 
   def beta_create_Saver_server(servicer, pool=None, pool_size=None, default_timeout=None, maximum_timeout=None):
@@ -225,12 +351,15 @@ try:
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_deserializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveRequest.FromString,
+      ('ipersistence.Saver', 'UpdateTags'): UpdateTagsRequest.FromString,
     }
     response_serializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveReply.SerializeToString,
+      ('ipersistence.Saver', 'UpdateTags'): BaseResultReply.SerializeToString,
     }
     method_implementations = {
       ('ipersistence.Saver', 'FetchSave'): face_utilities.unary_unary_inline(servicer.FetchSave),
+      ('ipersistence.Saver', 'UpdateTags'): face_utilities.unary_unary_inline(servicer.UpdateTags),
     }
     server_options = beta_implementations.server_options(request_deserializers=request_deserializers, response_serializers=response_serializers, thread_pool=pool, thread_pool_size=pool_size, default_timeout=default_timeout, maximum_timeout=maximum_timeout)
     return beta_implementations.server(method_implementations, options=server_options)
@@ -244,12 +373,15 @@ try:
     generated only to ease transition from grpcio<0.15.0 to grpcio>=0.15.0"""
     request_serializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveRequest.SerializeToString,
+      ('ipersistence.Saver', 'UpdateTags'): UpdateTagsRequest.SerializeToString,
     }
     response_deserializers = {
       ('ipersistence.Saver', 'FetchSave'): FetchSaveReply.FromString,
+      ('ipersistence.Saver', 'UpdateTags'): BaseResultReply.FromString,
     }
     cardinalities = {
       'FetchSave': cardinality.Cardinality.UNARY_UNARY,
+      'UpdateTags': cardinality.Cardinality.UNARY_UNARY,
     }
     stub_options = beta_implementations.stub_options(host=host, metadata_transformer=metadata_transformer, request_serializers=request_serializers, response_deserializers=response_deserializers, thread_pool=pool, thread_pool_size=pool_size)
     return beta_implementations.dynamic_stub(channel, 'ipersistence.Saver', cardinalities, options=stub_options)
