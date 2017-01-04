@@ -24,17 +24,15 @@ $ pip install grpcio
 $ pip install grpcio-tools
 ```
 
-Example edit proto buffer
+## Usage 
+
+Edit proto buffer.  
 ```
 $ vi ipersistence.proto
 ```
 
-Example: creating python code.
+Generate codes.  
 ```
-$ python -m grpc_tools.protoc -I./ --python_out=python --grpc_python_out=python ipersistence.proto
+$ sh generate_code.sh
 ```
 
-Example: creating go code.
-```
-$ protoc -I ./ ipersistence.proto --go_out=plugins=grpc:go
-```

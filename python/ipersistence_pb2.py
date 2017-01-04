@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ipersistence.proto',
   package='ipersistence',
   syntax='proto3',
-  serialized_pb=_b('\n\x12ipersistence.proto\x12\x0cipersistence\"=\n\x10\x46\x65tchSaveRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"Q\n\x0e\x46\x65tchSaveReply\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07imageID\x18\x03 \x01(\t\x12\x0c\n\x04path\x18\x04 \x01(\t\"B\n\x11UpdateTagsRequest\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"D\n\x0f\x42\x61seResultReply\x12\x0f\n\x07success\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x0f\n\x07imageID\x18\x03 \x01(\t2\xa4\x01\n\x05Saver\x12K\n\tFetchSave\x12\x1e.ipersistence.FetchSaveRequest\x1a\x1c.ipersistence.FetchSaveReply\"\x00\x12N\n\nUpdateTags\x12\x1f.ipersistence.UpdateTagsRequest\x1a\x1d.ipersistence.BaseResultReply\"\x00\x42\x34\n\x1dio.grpc.examples.ipersistenceB\x11IPersistenceProtoP\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x12ipersistence.proto\x12\x0cipersistence\"=\n\x10\x46\x65tchSaveRequest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"/\n\x0e\x46\x65tchSaveReply\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0c\n\x04path\x18\x02 \x01(\t\"B\n\x11UpdateTagsRequest\x12\x0f\n\x07imageID\x18\x01 \x01(\t\x12\x0e\n\x06userID\x18\x02 \x01(\t\x12\x0c\n\x04tags\x18\x03 \x03(\t\"\x11\n\x0f\x42\x61seResultReply2\xa4\x01\n\x05Saver\x12K\n\tFetchSave\x12\x1e.ipersistence.FetchSaveRequest\x1a\x1c.ipersistence.FetchSaveReply\"\x00\x12N\n\nUpdateTags\x12\x1f.ipersistence.UpdateTagsRequest\x1a\x1d.ipersistence.BaseResultReply\"\x00\x42\x34\n\x1dio.grpc.examples.ipersistenceB\x11IPersistenceProtoP\x01\x62\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -79,29 +79,15 @@ _FETCHSAVEREPLY = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success', full_name='ipersistence.FetchSaveReply.success', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='imageID', full_name='ipersistence.FetchSaveReply.imageID', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='message', full_name='ipersistence.FetchSaveReply.message', index=1,
+      name='path', full_name='ipersistence.FetchSaveReply.path', index=1,
       number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='imageID', full_name='ipersistence.FetchSaveReply.imageID', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='path', full_name='ipersistence.FetchSaveReply.path', index=3,
-      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -119,7 +105,7 @@ _FETCHSAVEREPLY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=99,
-  serialized_end=180,
+  serialized_end=146,
 )
 
 
@@ -163,8 +149,8 @@ _UPDATETAGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=182,
-  serialized_end=248,
+  serialized_start=148,
+  serialized_end=214,
 )
 
 
@@ -175,27 +161,6 @@ _BASERESULTREPLY = _descriptor.Descriptor(
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
-    _descriptor.FieldDescriptor(
-      name='success', full_name='ipersistence.BaseResultReply.success', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='ipersistence.BaseResultReply.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
-    _descriptor.FieldDescriptor(
-      name='imageID', full_name='ipersistence.BaseResultReply.imageID', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      options=None),
   ],
   extensions=[
   ],
@@ -208,8 +173,8 @@ _BASERESULTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=250,
-  serialized_end=318,
+  serialized_start=216,
+  serialized_end=233,
 )
 
 DESCRIPTOR.message_types_by_name['FetchSaveRequest'] = _FETCHSAVEREQUEST

@@ -24,10 +24,8 @@ message FetchSaveRequest {
 
 // The response message containing the greetings
 message FetchSaveReply {
-    bool success = 1;
-    string message = 2;
-    string imageID = 3;
-    string path = 4;
+    string imageID = 1;
+    string path = 2;
 }
 
 message UpdateTagsRequest {
@@ -37,7 +35,4 @@ message UpdateTagsRequest {
 }
 
 message BaseResultReply {
-  bool success = 1;
-  string message = 2;
-  string imageID = 3;
 }
