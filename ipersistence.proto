@@ -1,0 +1,30 @@
+// Copyright 2017, Oruche Inc.
+// All rights reserved.
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.ipersistence";
+option java_outer_classname = "IPersistenceProto";
+
+package ipersistence;
+
+// The greeting service definition.
+service Saver {
+    rpc FetchSave (FetchSaveRequest) returns (FetchSaveReply) {}
+}
+
+// The request message containing the user's name.
+message FetchSaveRequest {
+    string url = 1;
+    string userID = 2;
+    repeated string tags = 3;
+}
+
+// The response message containing the greetings
+message FetchSaveReply {
+    bool success = 1;
+    string message = 2;
+    string imageID = 3;
+    string path = 4;
+}
