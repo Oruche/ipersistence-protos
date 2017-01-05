@@ -7,7 +7,7 @@ option java_multiple_files = true;
 option java_package = "io.grpc.examples.ipersistence";
 option java_outer_classname = "IPersistenceProto";
 
-package ipersistence;
+package main;
 
 // The greeting service definition.
 service Saver {
@@ -51,4 +51,3 @@ message SearchByTagReply {
     }
     repeated Image images = 1;
 }
-
