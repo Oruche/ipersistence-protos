@@ -73,7 +73,7 @@ function generate {
   if [ "$VALUE_L" = "python" ]; then
       python -m grpc_tools.protoc ipersistence.proto --python_out=$VALUE_O --grpc_python_out=$VALUE_O --proto_path=./
   elif [ "$VALUE_L" = "go" ]; then
-      $PROT_CMD ipersistence.proto --go_out=plugins=grpc:$VALUE_O
+      $PROTO_CMD ipersistence.proto --go_out=plugins=grpc:$VALUE_O
   else
        echo "invalid language. Supperted language is ..."
        list
