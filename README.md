@@ -1,38 +1,35 @@
 # ipersistence-protos
-This repository manages ipersistence's protocol buffer and gRPC code.
+This repository manages a ipersistence's protocol buffer and a script which generates gRPC codes.
 
-## Set up for developments.
+## Usage
 
-You need to download protocol buffer [here](https://github.com/google/protobuf).
-
-Recommendation:
-We recommend you to download zip(e.x protoc-3.1.0-osx-x86_64.zip) from [here](https://github.com/google/protobuf/releases)
+### 1.Edit proto buffer.  
 
 ```
-export PATH="/path/to/protoc/bin:$PATH"
+$ vi ipersistence.proto
 ```
 
-For golang,
+### 2. Install each language plugins.  
+
+For go:
 ```
 $ go get -u github.com/golang/protobuf/{proto,protoc-gen-go}
 $ go get -u google.golang.org/grpc
 ```
 
-For python
+For python:
 ```
 $ pip install grpcio
 $ pip install grpcio-tools
 ```
 
-## Usage 
+### 3. Generate codes.
 
-Edit proto buffer.  
 ```
-$ vi ipersistence.proto
-```
-
-Generate codes.  
-```
-$ sh generate_code.sh
+$ sh proto.sh generate -l [LANG] -o [OUTPUT_DIR]
 ```
 
+help message.
+```
+$ sh proto.sh --help
+```
