@@ -15,6 +15,7 @@ Subcommand:
         generate grpc code.
 
         options:
+            -p : proto file (required).
             -l : language (required).
             -o : output dir (required).
 
@@ -41,24 +42,31 @@ else
 fi
 
 function generate {
-  GENERATE_USAGE="Usage: $SCRIPTNAME generate [-l LANG] [-o OUTPUT_DIR]"
-
+  GENERATE_USAGE="Usage: $SCRIPTNAME generate [-p PROTO] [-l LANG] [-o OUTPUT_DIR]"
+  FLG_P="FALSE"
   FLG_L="FALSE"
   FLG_O="FALSE"
   while getopts l:o: OPT
   do
     case $OPT in
+      "p" )
+        FLG_P="TRUE"; PROTO="$OPTARG"
+        ;;
       "l" )
-        FLG_L="TRUE"; VALUE_L="$OPTARG"
+        FLG_L="TRUE"; LANGUAGE="$OPTARG"
         ;;
       "o" )
-        FLG_O="TRUE"; VALUE_O="$OPTARG"
+        FLG_O="TRUE"; OUTPUT="$OPTARG"
         ;;
       * ) echo $GENERATE_USAGE 1>&2
             exit 1 ;;
     esac
   done
 
+  if ["$FLG_P" != "TRUE"]; then
+    echo '-p option is required.'
+    echo $GENERATE_USAGE
+    exit 2
   if [ "$FLG_L" != "TRUE" ]; then
     echo '-l option is required.'
     echo $GENERATE_USAGE
@@ -70,10 +78,10 @@ function generate {
     exit 2
   fi
 
-  if [ "$VALUE_L" = "python" ]; then
-      python -m grpc_tools.protoc ipersistence.proto --python_out=$VALUE_O --grpc_python_out=$VALUE_O --proto_path=./
-  elif [ "$VALUE_L" = "go" ]; then
-      $PROTO_CMD ipersistence.proto --go_out=plugins=grpc:$VALUE_O --proto_path=./ 
+  if [ "$LANGUAGE" = "python" ]; then
+      python -m grpc_tools.protoc $PROTO --python_out=$OUTPUT --grpc_python_out=$OUTPUT --proto_path=./protos/
+  elif [ "$LANGUAGE" = "go" ]; then
+      $PROTO_CMD $PROTO --go_out=plugins=grpc:$OUTPUT --proto_path=./protos/
   else
        echo "invalid language. Supperted language is ..."
        list
